@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Linux Shell入门 | Arrow&#39;Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Arrow">
+    
+    
+
+    <meta name="description" content="第一个Shell程序
+创建文件 编写如下代码：
+12#!/bin/bashecho &amp;quot;Hello World !&amp;quot;
+
+修改文件为可执行程序并执行它
+12chmod +x ./test.sh  #使脚本具有执行权限./test.sh  #执行脚本
+
+
+
+Shell 变量
+定义变量定义变量时，变量名不加美元符号（$），如： variableName=”value”　　注意，变量名和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Shell入门 | Arrow'Blog">
+<meta property="og:url" content="http://yoursite.com/2016/07/11/linux-shell/index.html">
+<meta property="og:site_name" content="Arrow'Blog">
+<meta property="og:description" content="第一个Shell程序
+创建文件 编写如下代码：
+12#!/bin/bashecho &amp;quot;Hello World !&amp;quot;
+
+修改文件为可执行程序并执行它
+12chmod +x ./test.sh  #使脚本具有执行权限./test.sh  #执行脚本
+
+
+
+Shell 变量
+定义变量定义变量时，变量名不加美元符号（$），如： variableName=”value”　　注意，变量名和">
+<meta property="og:updated_time" content="2016-07-11T12:50:07.205Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux Shell入门 | Arrow'Blog">
+<meta name="twitter:description" content="第一个Shell程序
+创建文件 编写如下代码：
+12#!/bin/bashecho &amp;quot;Hello World !&amp;quot;
+
+修改文件为可执行程序并执行它
+12chmod +x ./test.sh  #使脚本具有执行权限./test.sh  #执行脚本
+
+
+
+Shell 变量
+定义变量定义变量时，变量名不加美元符号（$），如： variableName=”value”　　注意，变量名和">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Arrow&#39;Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Linux Shell入门</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-11" class="post-meta__date date">2016-07-11</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Linux/">Linux</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h4 id="第一个Shell程序"><a href="#第一个Shell程序" class="headerlink" title="第一个Shell程序"></a>第一个Shell程序</h4><ol>
+<li><p>创建文件 编写如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">echo &quot;Hello World !&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改文件为可执行程序并执行它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod +x ./test.sh  #使脚本具有执行权限</div><div class="line">./test.sh  #执行脚本</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="Shell-变量"><a href="#Shell-变量" class="headerlink" title="Shell 变量"></a>Shell 变量</h4><ol>
+<li><p>定义变量<br>定义变量时，变量名不加美元符号（$），如： <strong>variableName=”value”</strong><br>　　<strong>注意，变量名和等号之间不能有空格!</strong><br>变量定义举例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myUrl=<span class="string">"http://see.xidian.edu.cn/cpp/linux/"</span></div><div class="line">myNum=100</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用变量<br>使用一个定义过的变量，只要在变量名前面加美元符号（$）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">name=<span class="string">"mozhiyan"</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$name</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$&#123;name&#125;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>只读变量<br>使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变</p>
+</li>
+<li>删除变量<br>使用 unset 命令可以删除变量</li>
+</ol>
+<h4 id="Shell特殊变量：Shell-0-和命令行参数"><a href="#Shell特殊变量：Shell-0-和命令行参数" class="headerlink" title="Shell特殊变量：Shell $0, $#, $*, $@, $?, $$和命令行参数"></a>Shell特殊变量：Shell $0, $#, $*, $@, $?, $$和命令行参数</h4><table>
+<thead>
+<tr>
+<th>变量</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$0</td>
+<td style="text-align:left">当前脚本的文件名</td>
+</tr>
+<tr>
+<td>$n</td>
+<td style="text-align:left">传递给脚本或函数的参数。n是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2</td>
+</tr>
+<tr>
+<td>$#</td>
+<td style="text-align:left">传递给脚本或函数的参数个数</td>
+</tr>
+<tr>
+<td>$*</td>
+<td style="text-align:left">传递给脚本或函数的所有参数</td>
+</tr>
+<tr>
+<td>$@</td>
+<td style="text-align:left">传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $* 稍有不同</td>
+</tr>
+<tr>
+<td>$?</td>
+<td style="text-align:left">上个命令的退出状态，或函数的返回值。</td>
+</tr>
+<tr>
+<td>$$</td>
+<td style="text-align:left">当前Shell进程ID。对于 Shell脚本，就是这些脚本所在的进程ID。</td>
+</tr>
+</tbody>
+</table>
+<p>举例</p>
+<pre><code class="bash"><span class="meta">#!/bin/bash</span>
+<span class="comment">#</span>
+<span class="built_in">echo</span> <span class="string">"File Name <span class="variable">$0</span>"</span>
+<span class="built_in">echo</span> <span class="string">"First Param is <span class="variable">$1</span>"</span>
+<span class="built_in">echo</span> <span class="string">"Second Param is <span class="variable">$2</span>"</span>
+<span class="built_in">echo</span> <span class="string">"Total Param is $*"</span>
+<span class="built_in">echo</span> <span class="string">"Total Param is <span class="variable">$@</span>"</span>
+<span class="built_in">echo</span> <span class="string">"Total param count is <span class="variable">$#</span>"</span>
+</code></pre>
+<p>输出结果</p>
+<pre><code class="bash">./<span class="built_in">test</span>4.sh Zhangsan lisi  wangwu
+File Name ./<span class="built_in">test</span>4.sh
+First Param is Zhangsan
+Second Param is lisi
+Total Param is Zhangsan lisi wangwu
+Total Param is Zhangsan lisi wangwu
+Total param count is 3
+</code></pre>
+<h4 id="Shell运算符"><a href="#Shell运算符" class="headerlink" title="Shell运算符"></a>Shell运算符</h4>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/07/11/linux-shell/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"arrow-zh"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; Arrow</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

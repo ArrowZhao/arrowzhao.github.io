@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Linux基本命令 | Arrow&#39;Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Arrow">
+    
+    
+
+    <meta name="description" content="1.上传下载文件工具rz和szyum install -y lrzsz注意:rhel安装完系统后 直接可使用 rz sz使用方法：1）、上传文件：
+rz 本地文件名rz -y 本地文件名 覆盖上传2）、下载文件：
+sz remotefilenamesz -y remotefilename 覆盖下载下载的默认路径在：windows的下载目录、在SecureCRT下执行的话在安装目录的download">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基本命令 | Arrow'Blog">
+<meta property="og:url" content="http://yoursite.com/2016/07/11/linux-basc-cmd/index.html">
+<meta property="og:site_name" content="Arrow'Blog">
+<meta property="og:description" content="1.上传下载文件工具rz和szyum install -y lrzsz注意:rhel安装完系统后 直接可使用 rz sz使用方法：1）、上传文件：
+rz 本地文件名rz -y 本地文件名 覆盖上传2）、下载文件：
+sz remotefilenamesz -y remotefilename 覆盖下载下载的默认路径在：windows的下载目录、在SecureCRT下执行的话在安装目录的download">
+<meta property="og:updated_time" content="2016-07-11T13:06:43.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux基本命令 | Arrow'Blog">
+<meta name="twitter:description" content="1.上传下载文件工具rz和szyum install -y lrzsz注意:rhel安装完系统后 直接可使用 rz sz使用方法：1）、上传文件：
+rz 本地文件名rz -y 本地文件名 覆盖上传2）、下载文件：
+sz remotefilenamesz -y remotefilename 覆盖下载下载的默认路径在：windows的下载目录、在SecureCRT下执行的话在安装目录的download">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Arrow&#39;Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Linux基本命令</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-11" class="post-meta__date date">2016-07-11</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Linux/">Linux</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h5 id="1-上传下载文件工具rz和sz"><a href="#1-上传下载文件工具rz和sz" class="headerlink" title="1.上传下载文件工具rz和sz"></a>1.上传下载文件工具rz和sz</h5><p>yum install -y lrzsz<br>注意:rhel安装完系统后 直接可使用 rz sz<br>使用方法：<br>1）、上传文件：</p>
+<p>rz 本地文件名<br>rz -y 本地文件名 覆盖上传<br>2）、下载文件：</p>
+<p>sz remotefilename<br>sz -y remotefilename 覆盖下载<br>下载的默认路径在：windows的下载目录、在SecureCRT下执行的话在安装目录的download目录下。</p>
+<h5 id="2-常用命令总结"><a href="#2-常用命令总结" class="headerlink" title="2. 常用命令总结"></a>2. 常用命令总结</h5><p>1）、创建文件夹  mkdir<br>-p 递归删除子目录<br>2）、创建文件 touch </p>
+<p>3）、删除文件夹   rm -rf </p>
+<p>4）、删除文件   rm -f </p>
+<p>5）、拷贝文件  cp  原路径   目标路径</p>
+<p>6）、拷贝文件夹  cp -ri 原路径   目标路径</p>
+<p>7）、查看文件内容  cat</p>
+<p>8）、将着文本直接写入文件的末尾一行  catecho ‘i am a teacher’ &gt;&gt; oldboy.txt</p>
+<p>9）、剪切    mv  原路径   目标路径</p>
+<p>10）、head -行数  文件名  查看某个文件的前几行</p>
+<p>11）、tail -行数  文件名  查看某个文件的结尾几行</p>
+<p>12）、grep 核心命名  (三剑客老三) 过滤<br>-v 排除<br>-E 多个 竖线分隔  等于命令 egrep<br>-i 忽略大小写</p>
+<p>13）、sed 核心命名  (三剑客老二)  主要是以行为单位进行处理，可以将数据行进行替换、删除、新增、选取等特定工作<br>详细用法 参见：<a href="http://www.cnblogs.com/dong008259/archive/2011/12/07/2279897.html" target="_blank" rel="external">http://www.cnblogs.com/dong008259/archive/2011/12/07/2279897.html</a><br>sed -n 20,30p ett.txt  输出文件的 20- 30行<br>sed -i s#1#2#g ett.txt  将1替换为2</p>
+<p>14）、波浪线代表用户的目录 ~</p>
+<p>15）、which 命令  查看命令的位置</p>
+<p>16）、alias -p  key=value 别名命令<br>unalias 取消别名<br>别名存储位置  ~\ .bashrc 文件中</p>
+<p>17）、find 利用管道删除<br>find / -name ‘test.txt’ | xargs rm -rf  说明  xargs 安行<br>-type 类型  f文件<br>-name 文件名<br>-mtime 时间</p>
+<p>18）、seq 打印序列<br>seq  100 打印 1- 100<br>seq   20 100 打印 20-100<br>seq  1 2 9 打印 1-9 以 2递增<br>seq -s ‘,’  1 9 打印 1-9横向以逗号分隔</p>
+<p>19）、chkconfig  –list 查看运行的服务<br>chkconfig  shhd off 设置shhd开启不启动</p>
+<p>20）、设置时间同步 rdate -s time-b.nist.gov</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/07/11/linux-basc-cmd/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"arrow-zh"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; Arrow</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Oracle 创建表空间，用户，授权,导入，导出 | Arrow&#39;Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Arrow">
+    
+    
+
+    <meta name="description" content="导出数据库1exp system/manager@TEST file=d:\daochu.dmp
+查询表空间存放位置1select * from dba_data_files
+1. 创建临时表空间123456create temporary tablespace test_temp tempfile &apos;E:\oracle\product\10.2.0\oradata\testserver\test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle 创建表空间，用户，授权,导入，导出 | Arrow'Blog">
+<meta property="og:url" content="http://yoursite.com/2016/07/09/oracle-imp-exp/index.html">
+<meta property="og:site_name" content="Arrow'Blog">
+<meta property="og:description" content="导出数据库1exp system/manager@TEST file=d:\daochu.dmp
+查询表空间存放位置1select * from dba_data_files
+1. 创建临时表空间123456create temporary tablespace test_temp tempfile &apos;E:\oracle\product\10.2.0\oradata\testserver\test">
+<meta property="og:updated_time" content="2016-08-02T13:59:16.592Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle 创建表空间，用户，授权,导入，导出 | Arrow'Blog">
+<meta name="twitter:description" content="导出数据库1exp system/manager@TEST file=d:\daochu.dmp
+查询表空间存放位置1select * from dba_data_files
+1. 创建临时表空间123456create temporary tablespace test_temp tempfile &apos;E:\oracle\product\10.2.0\oradata\testserver\test">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Arrow&#39;Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Oracle 创建表空间，用户，授权,导入，导出</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-09" class="post-meta__date date">2016-07-09</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/oracle/">oracle</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exp system/manager@TEST file=d:\daochu.dmp</div></pre></td></tr></table></figure>
+<h3 id="查询表空间存放位置"><a href="#查询表空间存放位置" class="headerlink" title="查询表空间存放位置"></a>查询表空间存放位置</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> dba_data_files</div></pre></td></tr></table></figure>
+<h3 id="1-创建临时表空间"><a href="#1-创建临时表空间" class="headerlink" title="1. 创建临时表空间"></a>1. 创建临时表空间</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">temporary</span> <span class="keyword">tablespace</span> test_temp </div><div class="line">tempfile <span class="string">'E:\oracle\product\10.2.0\oradata\testserver\test_temp01.dbf'</span> </div><div class="line"><span class="keyword">size</span> <span class="number">32</span>m   </div><div class="line"><span class="keyword">autoextend</span> <span class="keyword">on</span> </div><div class="line"><span class="keyword">next</span> <span class="number">32</span>m <span class="keyword">maxsize</span> <span class="number">2048</span>m</div><div class="line"><span class="keyword">extent</span> <span class="keyword">management</span> <span class="keyword">local</span>;</div></pre></td></tr></table></figure>
+<h3 id="2-创建数据表空间"><a href="#2-创建数据表空间" class="headerlink" title="2. 创建数据表空间"></a>2. 创建数据表空间</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">tablespace</span> test_data</div><div class="line"><span class="keyword">logging</span></div><div class="line"><span class="keyword">datafile</span> <span class="string">'E:\oracle\product\10.2.0\oradata\testserver\test_data01.dbf'</span> </div><div class="line"><span class="keyword">size</span> <span class="number">32</span>m </div><div class="line"><span class="keyword">autoextend</span> <span class="keyword">on</span> </div><div class="line"><span class="keyword">next</span> <span class="number">32</span>m <span class="keyword">maxsize</span> <span class="number">2048</span>m</div><div class="line"><span class="keyword">extent</span> <span class="keyword">management</span> <span class="keyword">local</span>;</div></pre></td></tr></table></figure>
+<h3 id="3-创建用户并指定表空间"><a href="#3-创建用户并指定表空间" class="headerlink" title="3. 创建用户并指定表空间"></a>3. 创建用户并指定表空间</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">user</span> testserver_user <span class="keyword">identified</span> <span class="keyword">by</span> testserver_user</div><div class="line"><span class="keyword">default</span> <span class="keyword">tablespace</span> test_data</div><div class="line"><span class="keyword">temporary</span> <span class="keyword">tablespace</span> test_temp;</div></pre></td></tr></table></figure>
+<h3 id="4-给用户授予权限"><a href="#4-给用户授予权限" class="headerlink" title="4. 给用户授予权限"></a>4. 给用户授予权限</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>,<span class="keyword">resource</span>,dba <span class="keyword">to</span> testserver_user;</div></pre></td></tr></table></figure>
+<h3 id="5-导入数据"><a href="#5-导入数据" class="headerlink" title="5. 导入数据"></a>5. 导入数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">imp name/pass@orcl  full=y file=d:\daochu.dmp ignore=y</div></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/07/09/oracle-imp-exp/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"arrow-zh"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; Arrow</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
