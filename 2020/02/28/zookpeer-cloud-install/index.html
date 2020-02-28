@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      zookeeper集群环境搭建 | Arrow&#39;Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Arrow">
+    
+    
+
+    <meta name="description" content="1、服务器环境VM安装三台CentOS服务器，可以采用克隆方式安装，配置IP地址如下123node1    192.168.126.200node2    192.168.126.201node3    192.168.126.202
+2、安装Java环境2.1、安装RPM包1rpm -ivh jdk-7u79-linux-x64.rpm
+2.2、设置环境变量1vim  /etc/profile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zookeeper集群环境搭建 | Arrow'Blog">
+<meta property="og:url" content="http://yoursite.com/2020/02/28/zookpeer-cloud-install/index.html">
+<meta property="og:site_name" content="Arrow'Blog">
+<meta property="og:description" content="1、服务器环境VM安装三台CentOS服务器，可以采用克隆方式安装，配置IP地址如下123node1    192.168.126.200node2    192.168.126.201node3    192.168.126.202
+2、安装Java环境2.1、安装RPM包1rpm -ivh jdk-7u79-linux-x64.rpm
+2.2、设置环境变量1vim  /etc/profile">
+<meta property="og:updated_time" content="2020-02-28T11:54:28.760Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zookeeper集群环境搭建 | Arrow'Blog">
+<meta name="twitter:description" content="1、服务器环境VM安装三台CentOS服务器，可以采用克隆方式安装，配置IP地址如下123node1    192.168.126.200node2    192.168.126.201node3    192.168.126.202
+2、安装Java环境2.1、安装RPM包1rpm -ivh jdk-7u79-linux-x64.rpm
+2.2、设置环境变量1vim  /etc/profile">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Arrow&#39;Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">zookeeper集群环境搭建</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2020-02-28" class="post-meta__date date">2020-02-28</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/分布式/">分布式</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h5 id="1、服务器环境"><a href="#1、服务器环境" class="headerlink" title="1、服务器环境"></a>1、服务器环境</h5><p>VM安装三台CentOS服务器，可以采用克隆方式安装，配置IP地址如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">node1    192.168.126.200</div><div class="line">node2    192.168.126.201</div><div class="line">node3    192.168.126.202</div></pre></td></tr></table></figure></p>
+<h5 id="2、安装Java环境"><a href="#2、安装Java环境" class="headerlink" title="2、安装Java环境"></a>2、安装Java环境</h5><h6 id="2-1、安装RPM包"><a href="#2-1、安装RPM包" class="headerlink" title="2.1、安装RPM包"></a>2.1、安装RPM包</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh jdk-7u79-linux-x64.rpm</div></pre></td></tr></table></figure>
+<h6 id="2-2、设置环境变量"><a href="#2-2、设置环境变量" class="headerlink" title="2.2、设置环境变量"></a>2.2、设置环境变量</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim  /etc/profile</div></pre></td></tr></table></figure>
+<p>增加JAVA_HOME<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/jdk1.7.0_79</div><div class="line">export PATH=\$PATH:\$JAVA_HOME\bin</div></pre></td></tr></table></figure></p>
+<p>生效环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source  /etc/profile</div></pre></td></tr></table></figure></p>
+<h5 id="3、安装zookeeper"><a href="#3、安装zookeeper" class="headerlink" title="3、安装zookeeper"></a>3、安装zookeeper</h5><h6 id="3-1、下载安装包"><a href="#3-1、下载安装包" class="headerlink" title="3.1、下载安装包"></a>3.1、下载安装包</h6><p>通过网址下载安装包：<a href="http://zookeeper.apache.org/releases.html" target="_blank" rel="external">http://zookeeper.apache.org/releases.html</a> 此处下载zookeeper-3.4.14.tar.gz<br>规划安装目录，解压即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf zookeeper-3.4.14.tar.gz</div></pre></td></tr></table></figure>
+<h6 id="3-2、拷贝默认配置文件"><a href="#3-2、拷贝默认配置文件" class="headerlink" title="3.2、拷贝默认配置文件"></a>3.2、拷贝默认配置文件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp zoo_sample.cfg  zoo.cf</div></pre></td></tr></table></figure>
+<h6 id="3-2、修改配置配置文件"><a href="#3-2、修改配置配置文件" class="headerlink" title="3.2、修改配置配置文件"></a>3.2、修改配置配置文件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim zoo.cfg</div></pre></td></tr></table></figure>
+<p>采用server.id=ip:port1:port2格式增加所有节点到配置文件，其中port1是集群之间通讯端口号，port2端口为选举端口号<br>分别在三台服务器的配置文件下增加配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server.1=192.168.126.200:2888:3888</div><div class="line">server.2=192.168.126.201:2888:3888</div><div class="line">server.3=192.168.126.202:2888:3888</div></pre></td></tr></table></figure>
+<h6 id="3-3、修改myid文件"><a href="#3-3、修改myid文件" class="headerlink" title="3.3、修改myid文件"></a>3.3、修改myid文件</h6><p>myid文件在zookeeper数据存储目录，数据存储目录为zoo.cfg文件dataDi配置值<br>分别在三台服务器执行如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">vim /tmp/zookeeper/myid</div><div class="line">1</div><div class="line"></div><div class="line">vim /tmp/zookeeper/myid</div><div class="line">2</div><div class="line"></div><div class="line">vim /tmp/zookeeper/myid</div><div class="line">3</div></pre></td></tr></table></figure>
+<h6 id="3-4、启动服务"><a href="#3-4、启动服务" class="headerlink" title="3.4、启动服务"></a>3.4、启动服务</h6><p>三台服务器下分别执行，需要注意防火墙端口号问题，如果局域网建议关闭防火墙方便测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#启动ZK服务: </div><div class="line">bin/zkServer.sh start</div><div class="line">#停止ZK服务: </div><div class="line">bin/zkServer.sh stop</div><div class="line">#重启ZK服务: </div><div class="line">bin/zkServer.sh restart</div><div class="line">#查看ZK服务状态: </div><div class="line">bin/zkServer.sh status</div></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2020/02/28/zookpeer-cloud-install/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"arrow-zh"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; Arrow</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
